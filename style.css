@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 html {
   margin: 0;
   padding: 0;
@@ -11,8 +12,7 @@ body {
   line-height: 2.1;
   color: #797e81;
   margin: 0;
-  padding: 0%;
-  /* 全体を中央寄せ */
+  padding: 0;
   text-align: center;
 }
 
@@ -30,17 +30,39 @@ h6 {
   margin: 0;
   padding: 0;
 }
+
+img {
+  width: 100%;
+  height: auto;
+}
+
 ul {
   margin: 0;
   padding: 0;
 }
 
 ul li {
-  list-style: none;
+  padding: 0;
+  list-style-type: none;
+}
+
+.inner {
+  width: 1024px;
+  margin: 0 auto;
+}
+img {
+  width: 100%;
+  height: auto;
 }
 
 section {
-  background-color: #fff;
+  position: relative;
+  background: #fff;
+}
+
+section h1 {
+  font-size: 3.8rem;
+  margin: 0 0 65px;
 }
 
 /* ヘッダ */
@@ -109,14 +131,6 @@ footer {
   background: #1d2326;
 }
 
-footer a {
-  color: #ea7558;
-}
-
-footer .logo {
-  color: #d4dde2;
-  font-size: 11rem;
-}
 footer .wrap-blk {
   margin-bottom: 120px;
   /* 子要素を横並びに */
@@ -153,7 +167,14 @@ footer i {
   padding: 60px 0;
   background: #111619;
 }
+footer a {
+  color: #ea7558;
+}
 
+footer .logo {
+  color: #d4dde2;
+  font-size: 11rem;
+}
 /* about いらっしゃいませ〜〜お箸の文化*/
 #about {
   margin-top: 812px;
@@ -163,40 +184,22 @@ footer i {
 #about h1 {
   color: #2e4551;
 }
-/* 詳しくはこちら */
-#about .btn a {
-  font-size: 1.5rem;
-  line-height: 38px;
-  /* 改行がない文章で、paddingで指定するのと、line-heightで指定することの差異 */
-  /* 文章が長い場合はline-heightで指定するのが必須、paddinngでもできるっちゃできるが、line-heightのほうがよい */
-  color: #ea7558;
-  width: 140px;
-  height: 42px;
-  border: 2px solid #ea7558;
-  /* paddingとborderの幅をwidthとheightに含む */
-  box-sizing: border-box;
-  display: inline-block;
-  border-radius: 21px;
+
+#about .wrap-blk {
+  display: flex;
+  justify-content: space-between;
 }
 
 #about .lead {
   margin: 0 0 65px;
 }
 
-#about .wrap-blk {
-  display: flex;
-}
-
 #about .contents-blk {
   width: 320px;
-  height: 200px;
-  border: 1px solid white;
-  margin: 5px;
 }
 
 #about h2 {
   font-size: 2.4rem;
-  font-size: 2rem;
   color: #2e4551;
   letter-spacing: 0.1em;
 }
@@ -214,6 +217,21 @@ footer i {
 #about .contents-blk#ohashi h2::before {
   display: block;
   content: url(./images/ico03.png);
+}
+/* 詳しくはこちら */
+#about .btn a {
+  font-size: 1.5rem;
+  line-height: 38px;
+  /* 改行がない文章で、paddingで指定するのと、line-heightで指定することの差異 */
+  /* 文章が長い場合はline-heightで指定するのが必須、paddinngでもできるっちゃできるが、line-heightのほうがよい */
+  color: #ea7558;
+  width: 140px;
+  height: 42px;
+  border: 2px solid #ea7558;
+  /* paddingとborderの幅をwidthとheightに含む */
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 21px;
 }
 
 #about .btn i {
@@ -245,6 +263,24 @@ footer i {
 }
 
 /* 丸いやつ */
+#feature h1 {
+  line-height: 1.3;
+  color: #fff;
+  letter-spacing: 0.1em;
+  margin: 0 0 20px;
+}
+
+#feature .lead {
+  font-size: 2.2rem;
+  line-height: 1.3;
+  color: #cfd5d8;
+}
+
+#feature .contents-blk {
+  color: #cfd5d8;
+  margin: 80px 0 0;
+}
+
 #feature h2 {
   font-size: 2.4rem;
   line-height: 1.3;
@@ -265,24 +301,6 @@ footer i {
   font-size: 1.2rem;
 }
 
-#feature h1 {
-  line-height: 1.3;
-  color: #fff;
-  letter-spacing: 0.1em;
-  margin: 0 0 20px;
-}
-
-#feature .lead {
-  font-size: 2.2rem;
-  line-height: 1.3;
-  color: #cfd5d8;
-}
-
-#feature .contents-blk {
-  color: #cfd5d8;
-  margin: 80px 0 0;
-}
-
 /* menu  料理のメニュー*/
 #menu {
   padding: 120px 0 20px;
@@ -298,6 +316,10 @@ footer i {
 }
 
 /* メニューのリスト */
+#menu .lead {
+  margin: 0 0 65px;
+}
+
 #menu ul {
   margin: 0 0 110px;
   /* 横並びに */
@@ -327,29 +349,6 @@ footer i {
   display: flex;
 }
 
-#menu h2 {
-  font-size: 1.5rem;
-  color: #2e4551;
-  letter-spacing: 0.05em;
-  margin: 0 0 10px;
-}
-
-#menu .text {
-  font-size: 1.5rem;
-  margin: 0 0 20px;
-}
-
-#menu .price {
-  font-size: 2.2rem;
-  color: #2e4551;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-}
-
-#menu .lead {
-  margin: 0 0 65px;
-}
-
 #menu .item {
   width: 233px;
   padding: 136px 0 20px;
@@ -371,6 +370,25 @@ footer i {
 /* メニューの画像 */
 #menu .item .photo img {
   border-radius: 50%;
+}
+
+#menu h2 {
+  font-size: 1.5rem;
+  color: #2e4551;
+  letter-spacing: 0.05em;
+  margin: 0 0 10px;
+}
+
+#menu .text {
+  font-size: 1.5rem;
+  margin: 0 0 20px;
+}
+
+#menu .price {
+  font-size: 2.2rem;
+  color: #2e4551;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
 
 /* reservation 予約のとこ */
@@ -404,7 +422,10 @@ footer i {
   display: block;
   content: url(./images/ico04.png);
 }
-
+#reservation p {
+  position: relative;
+  z-index: 1;
+}
 #reservation .btn a {
   line-height: 44px;
   color: #fff;
@@ -416,28 +437,559 @@ footer i {
   border-radius: 3px;
 }
 
-#reservation p {
-  position: relative;
-  z-index: 1;
+/* ヘッダ ロゴ */
+/* ---------------------当店について */
+
+body#about {
+  margin: 0;
+  padding: 0;
 }
 
-/* ナビバー */
-.inner {
-  width: 1024px;
-  margin: 0 auto;
+/* 下層ページ用 */
+header .logo a {
+  color: #2e4551;
+  font-size: 8rem;
 }
 
-img {
+#about #page-title {
+  /* 絶対位置の固定 */
+  position: fixed;
+  top: 100px;
   width: 100%;
-  height: auto;
+  padding: 100px 0;
+  /*                                         繰り返しなし 上下中央 左右中央 カバー */
+  background: url(about/images/bg_about.jpg) no-repeat center center/cover;
 }
 
-/* 各要素 */
-section {
-  position: relative;
+#about #page-title::after {
+  display: block;
+  /* "親要素"を基準に絶対位置 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* マット */
+  background: rgba(0, 0, 0, 0.5);
+  content: "";
 }
 
-section h1 {
+#about #page-title h1 {
+  margin: 0 0 65px;
   font-size: 3.8rem;
-  margin: 0 0 65px; /*上 左右 下*/
+  font-weight: 600;
+}
+
+#about #page-title h1,
+#about #page-title .lead {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+#about section {
+  position: relative;
+  /*       上   下 左右*/
+  padding: 65px 0 0;
+  background: white;
+}
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+/* フレックスボックス */
+#about section .wrap-blk {
+  display: flex;
+  /* 折返して配置 */
+  flex-wrap: wrap;
+}
+
+#about section .contents-blk {
+  /* ポジション指定しないのに、なぜrelativeが必要なのか?????? */
+  position: relative;
+  /* 親要素の1/3とする */
+  width: 33.3333%;
+  height: 300px;
+}
+
+#about .text {
+  display: flex;
+  /* 配置方向：内容を縦並びに */
+  flex-direction: column;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  /* 中央揃え */
+  text-align: center;
+  /* 上下中央 */
+  justify-content: center;
+  opacity: 0;
+}
+
+#about .text:hover {
+  opacity: 1;
+  font-size: 1.8rem;
+  transition: all 0.6s;
+}
+
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+/* about #sai との違いは?????? */
+/* id名個別で指定する、要素名#idのほうが優先度が上がる */
+#about section#sai {
+  margin: 510px 0 0;
+}
+#about section h1 {
+  font-size: 2.7rem;
+}
+
+#about #sai h1::before {
+  display: block;
+  content: url(./images/ico01.png);
+  /* このアイコンのサイズを変えるには? */
+  margin-top: 50px;
+}
+
+#about #kisetsu h1::before {
+  display: block;
+  content: url(./images/ico02.png);
+  margin-top: 50px;
+}
+
+#about #ohashi h1::before {
+  display: block;
+  content: url(./images/ico03.png);
+  margin-top: 50px;
+}
+
+#about section .lead {
+  margin: 0 0 65px;
+}
+
+footer .icon-logo {
+  color: white;
+}
+/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+/* フレックスボックス #sai */
+/* #sai .contents-blkの最初の要素 */
+#sai .contents-blk:first-child {
+  background: url(./about/images/sai01.jpg) no-repeat center center / cover;
+}
+
+/* #sai .contents-blkの2つめの要素 */
+#sai .contents-blk:nth-child(2) {
+  background: url(./about/images/sai02.jpg) no-repeat center center / cover;
+}
+
+#sai .contents-blk:nth-child(3) {
+  background: url(./about/images/sai03.jpg) no-repeat center center / cover;
+}
+
+#sai .contents-blk:nth-child(4) {
+  background: url(./about/images/sai04.jpg) no-repeat center center / cover;
+}
+
+#sai .contents-blk:nth-child(5) {
+  background: url(./about/images/sai05.jpg) no-repeat center center / cover;
+}
+
+#sai .contents-blk:last-child {
+  background: url(./about/images/sai06.jpg) no-repeat center center / cover;
+}
+
+/* フレックスボックス #kisetsu */
+#kisetsu .contents-blk:first-child {
+  background: url(./about/images/kisetsu01.jpg) no-repeat center center / cover;
+}
+
+#kisetsu .contents-blk:nth-child(2) {
+  background: url(./about/images/kisetsu02.jpg) no-repeat center center / cover;
+}
+
+#kisetsu .contents-blk:nth-child(3) {
+  background: url(./about/images/kisetsu03.jpg) no-repeat center center / cover;
+}
+
+#kisetsu .contents-blk:nth-child(4) {
+  background: url(./about/images/kisetsu04.jpg) no-repeat center center / cover;
+}
+
+#kisetsu .contents-blk:nth-child(5) {
+  background: url(./about/images/kisetsu05.jpg) no-repeat center center / cover;
+}
+
+#kisetsu .contents-blk:last-child {
+  background: url(./about/images/kisetsu06.jpg) no-repeat center center / cover;
+}
+
+/* フレックスボックス #ohashi */
+#ohashi .contents-blk:first-child {
+  background: url(./about/images/ohashi01.jpg) no-repeat center center / cover;
+}
+
+#ohashi .contents-blk:nth-child(2) {
+  background: url(./about/images/ohashi02.jpg) no-repeat center center / cover;
+}
+
+#ohashi .contents-blk:nth-child(3) {
+  background: url(./about/images/ohashi03.jpg) no-repeat center center / cover;
+}
+
+#ohashi .contents-blk:nth-child(4) {
+  background: url(./about/images/ohashi04.jpg) no-repeat center center / cover;
+}
+
+#ohashi .contents-blk:nth-child(5) {
+  background: url(./about/images/ohashi05.jpg) no-repeat center center / cover;
+}
+
+#ohashi .contents-blk:last-child {
+  background: url(./about/images/ohashi06.jpg) no-repeat center center / cover;
+}
+
+/* ---------------------------------
+メニューボタン
+---------------------------------- */
+
+header .menu-btn {
+  display: none;
+}
+
+/* ---------------------------------
+スマホ
+---------------------------------- */
+@media screen and (max-width: 414px) {
+  .inner {
+    width: 94%;
+    margin: 0 auto;
+  }
+
+  /* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+  /* ヘッダ */
+  header .inner {
+    height: 80px;
+  }
+
+  /* ロゴをサイズ調整して、中央に寄せる */
+  header .logo {
+    font-size: 6rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 下層ページ */
+  header .logo a {
+    font-size: 6rem;
+  }
+  #about header h1 {
+    margin: 0;
+  }
+
+  header .menu-btn {
+    display: block;
+    position: absolute;
+    right: 3%;
+    top: 10px;
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    line-height: 32px;
+    text-align: center;
+    border: 1px solid #666;
+    /* 背景を透明に */
+    background: transparent;
+    border-radius: 50%;
+  }
+
+  .menu-btn:focus {
+    /* メニューボタンがフォーカスされた時アウトラインを消す */
+    outline: none;
+  }
+
+  /* モバイル用メニュー設定 */
+  header .header-nav {
+    width: 250px;
+    position: fixed;
+    display: block;
+    top: 80px;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.2s;
+    transform: translate(250px);
+  }
+
+  /* header要素内の.header-navかつ.openクラス */
+  header .header-nav.open {
+    /* トランスフォーム：位置を移動しない */
+    transform: translate(0);
+  }
+
+  header .header-nav ul {
+    display: block;
+  }
+
+  header .header-nav li a {
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  /*-----------------------フッター*/
+
+  footer {
+    padding: 30px 0 0;
+  }
+
+  footer .logo {
+    font-size: 8rem;
+  }
+
+  footer .wrap-blk {
+    display: block;
+    margin: 0 0 30px;
+  }
+
+  footer .wrap-blk p {
+    width: 94%;
+    margin: 0 auto 30px;
+    text-align: left;
+  }
+
+  footer .wrap-blk ul {
+    width: 94%;
+    margin: 0 auto;
+    font-size: 1.8rem;
+  }
+
+  footer .copyright {
+    padding: 30px 0;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  /* ---------------------------------
+    ホーム
+  ---------------------------------- */
+
+  section h1 {
+    font-size: 2.7rem;
+    /* 行高 文字の1.5倍 */
+    line-height: 1.5;
+  }
+
+  #kv {
+    top: 80px;
+    height: 300px;
+  }
+
+  #about {
+    margin-top: 380px;
+    padding: 30px 0;
+  }
+
+  #about h1 {
+    margin-bottom: 30px;
+  }
+
+  /* 菜の彩り〜〜〜の全体 */
+  #about .wrap-blk {
+    /*  flexになっているので上書き */
+    display: block;
+  }
+
+  /* 菜の彩り等の各アイテム */
+  #about .wrap-blk .contents-blk {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  /* 小見出し */
+  #about .wrap-blk .contents-blk h2 {
+    font-size: 2.4rem;
+    line-height: 1.5;
+  }
+
+  /* 説明文 */
+  #about .wrap-blk .contents-blk p {
+    font-size: 1.4rem;
+  }
+
+  /* 詳しくはこちら */
+  #about .wrap-blk .contents-blk .btn {
+    margin-top: 10px;
+  }
+
+  /* 住んだ空気に包まれた〜のブロック */
+  #feature {
+    /* 横並びの解除 */
+    display: block;
+  }
+
+  /* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+  /* Q:
+      id .クラス名 と指定したときと
+      .クラス名で指定した時の挙動が違うのはなぜ??
+      ※対象のクラスは1つしか無い
+
+     A:
+      PC版の方で"id class名"と指定しており、
+      そちらのほうが優先度が高いため
+      .クラス名では上書きができなかった
+  */
+
+  /* NGな例 */
+  /* .feature-image {
+    width: 100%;
+    height: 300px;
+  } */
+  /* OKな例 */
+  #feature .feature-image {
+    width: 100%;
+    height: 300px;
+  }
+  /* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+
+  /* テキスト:澄んだ空気に〜〜〜〜 のブロック*/
+  #feature .feature-text {
+    width: 100%;
+    padding: 30px;
+  }
+
+  /* リード文:奥多摩の〜〜 */
+  #feature .lead {
+    font-size: 2rem;
+  }
+  /* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿ */
+  /* 寛ぎの空間, おもてなしの心 のブロック */
+  #feature .contents-blk {
+    margin: 40px 0 0;
+  }
+
+  #feature .contents-blk h2 {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+
+  #feature .contents-blk h2 span {
+    font-size: 1rem;
+  }
+
+  #feature .contents-blk p {
+    /* 要素幅(100％) - 100px */
+    width: calc(100% - 100px);
+    font-size: 1.4rem;
+  }
+
+  /* menu */
+
+  #menu {
+    padding: 30px 0;
+  }
+
+  #menu .inner {
+    width: 100%;
+  }
+
+  #menu h1 {
+    margin: 0 0 30px;
+  }
+
+  #menu .lead {
+    margin: 0 auto 30px;
+    width: 94%;
+  }
+  #menu ul {
+    /* フレックスボックス：折り返しあり */
+    flex-wrap: wrap;
+  }
+
+  #menu li {
+    margin: 0 15px;
+  }
+
+  #menu .item-blk {
+    flex-wrap: wrap;
+  }
+
+  #menu .item {
+    width: 44%;
+    padding: 80px 0 20px;
+    margin: 0 3% 100px;
+  }
+
+  #menu .item .photo {
+    left: calc(50% - 60px);
+    width: 120px;
+    height: 120px;
+  }
+
+  #menu .text {
+    font-size: 1.3rem;
+  }
+
+  #reservation {
+    padding: 30px 3%;
+    margin: -80px 0 0;
+    box-sizing: border-box;
+  }
+
+  #reservation .lead {
+    font-size: 1.2rem;
+  }
+
+  /*-----------------当店について*/
+
+  #about #page-title {
+    top: 80px;
+    padding: 30px 0;
+  }
+
+  #about #page-title h1,
+  #about #page-title .lead {
+    width: 94%;
+    margin: 0 auto;
+  }
+
+  #about #page-title h1 {
+    margin: 0 auto 30px;
+    font-size: 2.7rem;
+  }
+
+  #about section {
+    padding: 30px 0 0;
+  }
+
+  #about section .lead {
+    margin: 0 0 30px;
+  }
+
+  #about section#sai {
+    margin: 358px 0 0;
+  }
+
+  #about section .wrap-blk .contents-blk {
+    width: 50%;
+    height: 200px;
+    margin: 0;
+  }
+
+  #about section .contents-blk .text {
+    padding: 15px;
+  }
+
+  #about section .contents-blk .text h2 {
+    font-size: 1.8rem;
+  }
+
+  #about section .contents-blk .text p {
+    font-size: 1.2rem;
+  }
 }
